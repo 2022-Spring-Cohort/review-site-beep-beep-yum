@@ -1,0 +1,32 @@
+*{
+    box-sizing: border-box;
+}
+h1{
+    text-align: center;
+
+}
+h2{
+    text-align: center;
+}
+nav>ul{
+    display:flex;
+    justify-content: center;
+    justify-content: space-evenly;
+    padding-bottom: 5em;
+    list-style-type: none;
+}
+
+.foodTruckImgList{
+    width: 200px;
+    border-radius: 25px;
+}
+section>ul{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+    list-style-type: none;
+}
+
+
+
+
