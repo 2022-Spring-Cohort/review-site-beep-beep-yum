@@ -16,6 +16,27 @@ nav>ul{
     list-style-type: none;
 }
 
+.FoodTruckDetailsAndPhotos {
+    /* food truck prototype */
+    display: flex;
+    gap: 2em;
+    text-align: center;
+    justify-content: center;
+}
+
+.ReviewInput {
+    text-align: center;
+}
+
+.AddHashtag{
+    text-align: center;
+    padding-top: 1em;
+}
+
+.SubmitButton{
+    text-align: center;
+    padding-top: 4em;
+}
 .foodTruckImgList{
     width: 200px;
     border-radius: 25px;
@@ -25,6 +46,13 @@ section>ul{
     flex-wrap: wrap;
     gap: 2em;
     list-style-type: none;
+}
+/* All hashtags */
+.HashtagList>ul {
+    display: flex;
+    flex-direction: column;
+    max-height: 100px;
+    text-align: center;
 }
 
 
