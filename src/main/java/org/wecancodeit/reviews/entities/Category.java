@@ -3,6 +3,10 @@ package org.wecancodeit.reviews.entities;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
 
 @Entity
 public class Category {
@@ -11,18 +15,19 @@ public class Category {
 
     private long categoryId;
     private String category;
-    private long truckId;
 
-    public Category(long id, String category, long truckId) {
-        this.categoryId = id;
+    @ManyToMany
+    private Collection<FoodTruck> foodTrucks;
+
+    public Category(String category, FoodTruck...foodTrucks) {
         this.category = category;
-        this.truckId = truckId;
-    }
-    public Category(){
-
+        this.foodTrucks = Arrays.asList(foodTrucks);
     }
 
-    public long getId() {
+    public Category() {
+    }
+
+    public long getCategoryId() {
         return categoryId;
     }
 
@@ -30,7 +35,9 @@ public class Category {
         return category;
     }
 
-    public long getTruckId() {
-        return truckId;
+    public Collection<FoodTruck> getFoodTrucks() {
+        return foodTrucks;
     }
 }
+
+

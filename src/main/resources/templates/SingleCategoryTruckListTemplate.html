@@ -25,7 +25,7 @@
     <section class = "FoodTruckList">
         <ul>
 <!--            <li th:each="author: ${inBook.authors}"><a th:href="'/authors/' + ${author.id}" th:text="${author.name}">Sample author name</a></li>-->
-            <li th:each="foodTruck: ${foodTruck.categoryId}"><a th:href="'/SingleCategoryTruckList/' + ${foodTruck.categoryId}">Truck in this category</a></li>
+            <li th:each="currentCategory: ${foodTruck.categories}"><a th:href="'/SingleCategoryTruckList/' + ${currentCategory.categoryId}">Truck in this category</a></li>
 
         </ul>
     </section>

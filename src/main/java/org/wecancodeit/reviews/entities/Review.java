@@ -3,6 +3,7 @@ package org.wecancodeit.reviews.entities;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Review {
@@ -12,17 +13,21 @@ public class Review {
     private long reviewId;
     private String review;
     private int starRating;
-    private long truckId;
+    private String reviewTitle;
+    private String reviewAuthor;
+    @ManyToOne
+    private FoodTruck foodTruck;
 
-    public Review(long reviewId, String review, int starRating, long truckId) {
+    public Review(long reviewId, String review, int starRating, FoodTruck foodTruck, String reviewTitle, String reviewAuthor) {
         this.reviewId = reviewId;
         this.review = review;
         this.starRating = starRating;
-        this.truckId = truckId;
+        this.foodTruck = foodTruck;
+        this.reviewTitle = reviewTitle;
+        this.reviewAuthor = reviewAuthor;
     }
 
-    public Review(){
-
+    public Review() {
     }
 
     public long getReviewId() {
@@ -37,9 +42,20 @@ public class Review {
         return starRating;
     }
 
-    public long getTruckId() {
-        return truckId;
+    public String getReviewTitle() {
+        return reviewTitle;
+    }
+
+    public String getReviewAuthor() {
+        return reviewAuthor;
+    }
+
+    public FoodTruck getFoodTruck() {
+        return foodTruck;
     }
 }
+
+
+
 
 

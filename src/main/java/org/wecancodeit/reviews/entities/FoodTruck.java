@@ -1,8 +1,7 @@
 package org.wecancodeit.reviews.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Collection;
 
 @Entity
 public class FoodTruck {
@@ -12,22 +11,25 @@ public class FoodTruck {
     private long truckId;
     private String name;
     private String website;
-    private String category;
     private boolean orderAhead;
+    private String truckImage;
 
-    public FoodTruck(long id, String name, String website, String category, boolean orderAhead) {
-        this.truckId = id;
+    @OneToMany (mappedBy = "foodTruck")
+    private Collection<Review> reviews;
+
+    @ManyToMany (mappedBy = "foodTrucks")
+    private Collection<Category> categories;
+
+    public FoodTruck(String name, String website, boolean orderAhead, String truckImage) {
         this.name = name;
         this.website = website;
-        this.category = category;
         this.orderAhead = orderAhead;
+        this.truckImage = truckImage;
     }
 
     private FoodTruck(){
-
     }
-
-    public long getId() {
+    public long getTruckId() {
         return truckId;
     }
 
@@ -39,11 +41,20 @@ public class FoodTruck {
         return website;
     }
 
-    public String getCategory() {
-        return category;
-    }
-
     public boolean isOrderAhead() {
         return orderAhead;
     }
+
+    public String getTruckImage() {
+        return truckImage;
+    }
+
+    public Collection<Review> getReviews() {
+        return reviews;
+    }
+
+    public Collection<Category> getCategories() {
+        return categories;
+    }
 }
+
