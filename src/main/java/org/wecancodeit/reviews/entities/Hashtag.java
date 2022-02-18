@@ -5,6 +5,9 @@ import org.springframework.stereotype.Component;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import java.util.Arrays;
+import java.util.Collection;
 
 @Entity
 public class Hashtag {
@@ -13,19 +16,21 @@ public class Hashtag {
 
     private long hashtagId;
     private String hashtag;
-    private long truckId;
 
-    public Hashtag(long id, String hashTag, long truckId) {
-        this.hashtagId = id;
+    @ManyToMany
+    private Collection<FoodTruck> foodTrucks;
+
+    public Hashtag( String hashTag, FoodTruck...foodTrucks) {
         this.hashtag = hashtag;
-        this.truckId = truckId;
+        this.foodTrucks = Arrays.asList(foodTrucks);
+
     }
 
     public Hashtag(){
 
     }
 
-    public long getId() {
+    public long getHashtagId() {
         return hashtagId;
     }
 
@@ -33,7 +38,7 @@ public class Hashtag {
         return hashtag;
     }
 
-    public long getTruckId() {
-        return truckId;
+    public Collection<FoodTruck> getFoodTrucks() {
+        return foodTrucks;
     }
 }

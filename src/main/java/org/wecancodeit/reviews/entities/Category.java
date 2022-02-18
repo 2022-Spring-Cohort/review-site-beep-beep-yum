@@ -15,13 +15,15 @@ public class Category {
 
     private long categoryId;
     private String category;
+    private String categoryImage;
 
     @ManyToMany
     private Collection<FoodTruck> foodTrucks;
 
-    public Category(String category, FoodTruck...foodTrucks) {
+    public Category(String category, String categoryImage, FoodTruck...foodTrucks) {
         this.category = category;
         this.foodTrucks = Arrays.asList(foodTrucks);
+        this.categoryImage = categoryImage;
     }
 
     public Category() {
@@ -37,6 +39,10 @@ public class Category {
 
     public Collection<FoodTruck> getFoodTrucks() {
         return foodTrucks;
+    }
+
+    public String getCategoryImage() {
+        return categoryImage;
     }
 }
 

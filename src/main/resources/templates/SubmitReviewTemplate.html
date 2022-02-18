@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Food Truck List</title>
+    <title>Submit Review</title>
     <link rel="stylesheet" href="/css/layout.css">
     <link rel="stylesheet" href="/css/style.css">
 
@@ -11,6 +11,7 @@
     <header>
         <h1>
             Beep-Beep Yum
+    
         </h1>
     </header>
     <nav>
@@ -20,16 +21,27 @@
             <li><a th:href="'/'">All Categories</a></li>
         </ul>
     </nav>
-    <h2>Truck Category</h2>
+
 <main>
-    <section class = "FoodTruckList">
-        <ul>
-<!--            <li th:each="author: ${inBook.authors}"><a th:href="'/authors/' + ${author.id}" th:text="${author.name}">Sample author name</a></li>-->
-            <li th:each="currentFoodTruck: ${category.foodTrucks}"><a th:href="'/FoodTruckTemplate/' + ${currentFoodTruck.foodTruckId}">Truck in this category</a></li>
+    <h1>Submit Review</h1>
+    <div>
+        <div class="ReviewInput">
+            <label >Review: </label>
+            <input type="text">
+            
+        </div>
+        <br>
+        <div class="ReviewInput">
+            <label>Rating: </label>
+            <input type="text">
+        </div>
+        <div class="SubmitButton">
+            <button type="submit">Submit Review</button>
+        </div>
+        
 
-        </ul>
-    </section>
-
+    </div>
+    
 </main>
 
 

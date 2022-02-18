@@ -8,7 +8,7 @@ public class FoodTruck {
     @Id
     @GeneratedValue
 
-    private long truckId;
+    private long foodTruckId;
     private String name;
     private String website;
     private boolean orderAhead;
@@ -20,6 +20,9 @@ public class FoodTruck {
     @ManyToMany (mappedBy = "foodTrucks")
     private Collection<Category> categories;
 
+    @ManyToMany (mappedBy = "foodTrucks")
+    private Collection<Hashtag> hashtags;
+
     public FoodTruck(String name, String website, boolean orderAhead, String truckImage) {
         this.name = name;
         this.website = website;
@@ -29,8 +32,9 @@ public class FoodTruck {
 
     private FoodTruck(){
     }
-    public long getTruckId() {
-        return truckId;
+
+    public long getFoodTruckId() {
+        return foodTruckId;
     }
 
     public String getName() {
@@ -55,6 +59,10 @@ public class FoodTruck {
 
     public Collection<Category> getCategories() {
         return categories;
+    }
+
+    public Collection<Hashtag> getHashtags() {
+        return hashtags;
     }
 }
 
