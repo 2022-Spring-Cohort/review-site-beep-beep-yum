@@ -20,14 +20,13 @@ public class Hashtag {
     @ManyToMany
     private Collection<FoodTruck> foodTrucks;
 
-    public Hashtag( String hashTag, FoodTruck...foodTrucks) {
-        this.hashtag = hashtag;
-        this.foodTrucks = Arrays.asList(foodTrucks);
+    public Hashtag(){
 
     }
 
-    public Hashtag(){
-
+    public Hashtag(String hashtag, FoodTruck...foodTrucks) {
+        this.hashtag = hashtag;
+        this.foodTrucks = Arrays.asList(foodTrucks);
     }
 
     public long getHashtagId() {

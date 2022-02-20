@@ -13,10 +13,22 @@ public class HashtagController {
     public HashtagController(HashtagRepository hashtagRepo) {
         this.hashtagRepo = hashtagRepo;
     }
-    @RequestMapping("/AllHashtagsTemplate")
-    public String showAllHashtagsTemplate(Model model){
+
+//    @RequestMapping("/AllHashtagsTemplate")
+//    public String showAllHashtagsTemplate(Model model){
+//        model.addAttribute("hashtags", hashtagRepo.findAll());
+//        return "AllHashtagsTemplate";
+//    }
+    @RequestMapping("/AllHashtagTemplate")
+    public String showAllHashtagTemplate(Model model) {
         model.addAttribute("hashtags", hashtagRepo.findAll());
         return "AllHashtagsTemplate";
+    }
+
+    @RequestMapping("/SingleHashtagViewTemplate/{hashtagId}")
+    public String showFoodTruckTemplate(Model model, @PathVariable long hashtagId) {
+        model.addAttribute("hashtag", hashtagRepo.findById(hashtagId).get());
+        return "SingleHashtagViewTemplate";
     }
 
     //    @RequestMapping("/CategoriesTemplate/SingleCategoryTruckListTemplate/{categoryId}")
