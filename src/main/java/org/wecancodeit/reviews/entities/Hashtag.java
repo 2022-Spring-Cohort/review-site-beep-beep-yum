@@ -28,7 +28,9 @@ public class Hashtag {
         this.hashtag = hashtag;
         this.foodTrucks = Arrays.asList(foodTrucks);
     }
-
+    public void addFoodTruck(FoodTruck foodTruck){
+        foodTrucks.add(foodTruck);
+    }
     public long getHashtagId() {
         return hashtagId;
     }

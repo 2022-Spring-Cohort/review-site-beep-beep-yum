@@ -17,7 +17,7 @@
 </header>
 <nav>
     <ul>
-        <li><a th:href="'/AllHashtagTemplate'">Hashtags</a></li>
+        <li><a th:href="'/AllHashtagsTemplate'">Hashtags</a></li>
         <li><a href="./SubmitReview.html">Submit Review</a></li>
         <li><a th:href="'/'">All Categories</a></li>
     </ul>
@@ -31,22 +31,32 @@
             <img src="/img/american.jpg" alt="">
         </div>
         <div>
-            <h1>This is a food truck.</h1>
-            <p>Category</p>
-            <p>Website</p>
-            <p>Order ahead</p>
-            <p>Hashtag</p>
+            <h1 th:text="'This is ' + ${foodTruck.name} + ' food truck.'">this is a food truck.</h1>
+            <!--            <th:p>${foodTruck.getCategories}Category</th:p>-->
+            <div>
+                <label>Website: </label>
+                <p th:text="${foodTruck.website}">Website</p>
+            </div>
+            <div>
+                <label>Order Ahead: </label>
+                <p th:text="${foodTruck.orderAhead}">Order ahead</p>
+            </div>
+            <ul>
+            <li th:each="hashtags: ${foodTruck.hashtags}" th:text="${hashtags.hashtag}"></li>
+            </ul>
         </div>
     </div>
-
-    <div class="AddHashtag">
-        <label >Add Hashtag: </label>
-        <input type="text">
-    </div>
+<!--    /SubmitHashtag/{hasgtagId}-->
+    <form th:action="|/SubmitHashtag|" method="POST">
+        <div class="AddHashtag">
+            <label >Add Hashtag: </label>
+            <input name = "hashtag" type="text">
+            <input name = "foodTruckId" type="hidden" th:value="${foodTruck.foodTruckId}">
+        </div>
     <div class="SubmitButton">
         <button type="submit">Submit Hashtag</button>
     </div>
-
+    </form>
 </main>
 </body>
 

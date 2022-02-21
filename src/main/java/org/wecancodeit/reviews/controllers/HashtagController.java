@@ -3,15 +3,22 @@ package org.wecancodeit.reviews.controllers;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.wecancodeit.reviews.entities.FoodTruck;
+import org.wecancodeit.reviews.entities.Hashtag;
+import org.wecancodeit.reviews.repos.FoodTruckRepository;
 import org.wecancodeit.reviews.repos.HashtagRepository;
 
 @Controller
 public class HashtagController {
     private HashtagRepository hashtagRepo;
+    private FoodTruckRepository foodTruckRepo;
 
-    public HashtagController(HashtagRepository hashtagRepo) {
+    public HashtagController(HashtagRepository hashtagRepo, FoodTruckRepository foodTruckRepo) {
         this.hashtagRepo = hashtagRepo;
+        this.foodTruckRepo = foodTruckRepo;
     }
 
 //    @RequestMapping("/AllHashtagsTemplate")
@@ -36,4 +43,14 @@ public class HashtagController {
 ////        model.addAttribute("category", categoryRepo.findById(categoryId).get());
 //        return "SingleCategoryTruckListTemplate";
 //    }
+    @PostMapping("/SubmitHashtag")
+    public String addHashtag(@RequestParam String hashtag, @RequestParam Long foodTruckId) {
+        FoodTruck theFoodTruck = foodTruckRepo.findById(foodTruckId).get();
+
+//        theFoodTruck.a
+        Hashtag theHashtag = new Hashtag(hashtag, theFoodTruck);
+        hashtagRepo.save(theHashtag);
+//        return "redirect:/SingleHashtagViewTemplate/" + myHashtagId; ""
+        return "redirect:/AllHashtagTemplate";
+    }
 }
