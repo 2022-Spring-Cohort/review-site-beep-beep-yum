@@ -28,7 +28,7 @@ public class HashtagController {
 //        model.addAttribute("hashtags", hashtagRepo.findAll());
 //        return "AllHashtagsTemplate";
 //    }
-    @RequestMapping("/AllHashtagTemplate")
+    @RequestMapping("/AllHashtagsTemplate")
     public String showAllHashtagTemplate(Model model) {
         model.addAttribute("hashtags", hashtagRepo.findAll());
         return "AllHashtagsTemplate";
@@ -56,7 +56,6 @@ public class HashtagController {
                 hashtagRepo.save(tempHashtag.get());
             }
         }
-//        theFoodTruck.a
         else {
             Hashtag theHashtag = new Hashtag(hashtag, theFoodTruck);
             hashtagRepo.save(theHashtag);

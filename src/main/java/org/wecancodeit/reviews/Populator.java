@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 import org.wecancodeit.reviews.entities.Category;
 import org.wecancodeit.reviews.entities.FoodTruck;
 import org.wecancodeit.reviews.entities.Hashtag;
+import org.wecancodeit.reviews.entities.Review;
 import org.wecancodeit.reviews.repos.CategoryRepository;
 import org.wecancodeit.reviews.repos.FoodTruckRepository;
 import org.wecancodeit.reviews.repos.HashtagRepository;
@@ -60,6 +61,8 @@ public class Populator implements CommandLineRunner {
         Hashtag hashtag4 = new Hashtag("#badseafoodbadbad", foodTruck1,foodTruck2);
         hashtagRepo.save(hashtag4);
 
+        Review review1 = new Review("this is awsome food", 4, foodTruck1);
+        reviewRepo.save(review1);
 
     }
 

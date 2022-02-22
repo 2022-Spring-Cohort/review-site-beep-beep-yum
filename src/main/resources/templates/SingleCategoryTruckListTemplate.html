@@ -8,19 +8,8 @@
 
 </head>
 <body>
-    <header>
-        <h1>
-            Beep-Beep Yum
-        </h1>
-    </header>
-    <nav>
-        <ul>
-<!--            <li><a th:href="'/AllHashtagsTemplate'">Hashtags</a></li>-->
-            <li><a th:href="'/AllHashtagTemplate'">Hashtags</a></li>
-            <li><a href="./SubmitReview.html">Submit Review</a></li>
-            <li><a th:href="'/'">All Categories</a></li>
-        </ul>
-    </nav>
+    <header th:insert="Fragments.html :: header"></header>
+    <nav th:insert="Fragments.html :: nav"></nav>
     <h2>Truck Category</h2>
 <main>
     <section class = "FoodTruckList">

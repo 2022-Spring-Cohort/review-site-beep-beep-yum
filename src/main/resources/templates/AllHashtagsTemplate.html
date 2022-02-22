@@ -9,19 +9,10 @@
 </head>
 <body>
 
-<header>
-    <h1>
-        Beep-Beep Yum
+<header th:insert="Fragments.html :: header"></header>
 
-    </h1>
-</header>
-<nav>
-    <ul>
-        <li><a th:href="'/AllHashtagsTemplate'">Hashtags</a></li>
-        <li><a href="./SubmitReview.html">Submit Review</a></li>
-        <li><a th:href="'/'">All Categories</a></li>
-    </ul>
-</nav>
+<nav th:insert="Fragments.html :: nav"></nav>
+
 <main>
     <h1>All Hashtags</h1>
     <section class = "HashtagList">

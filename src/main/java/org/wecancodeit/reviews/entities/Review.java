@@ -18,8 +18,7 @@ public class Review {
     @ManyToOne
     private FoodTruck foodTruck;
 
-    public Review(long reviewId, String review, int starRating, FoodTruck foodTruck) {
-        this.reviewId = reviewId;
+    public Review(String review, int starRating, FoodTruck foodTruck) {
         this.review = review;
         this.starRating = starRating;
         this.foodTruck = foodTruck;
