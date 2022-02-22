@@ -42,4 +42,8 @@ public class Hashtag {
     public Collection<FoodTruck> getFoodTrucks() {
         return foodTrucks;
     }
+
+    public boolean containsFoodTruck(FoodTruck foodTruck){
+        return foodTrucks.contains(foodTruck);
+    }
 }

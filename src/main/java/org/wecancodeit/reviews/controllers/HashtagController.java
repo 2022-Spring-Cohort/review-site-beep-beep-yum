@@ -11,6 +11,8 @@ import org.wecancodeit.reviews.entities.Hashtag;
 import org.wecancodeit.reviews.repos.FoodTruckRepository;
 import org.wecancodeit.reviews.repos.HashtagRepository;
 
+import java.util.Optional;
+
 @Controller
 public class HashtagController {
     private HashtagRepository hashtagRepo;
@@ -47,10 +49,21 @@ public class HashtagController {
     public String addHashtag(@RequestParam String hashtag, @RequestParam Long foodTruckId) {
         FoodTruck theFoodTruck = foodTruckRepo.findById(foodTruckId).get();
 
+        Optional<Hashtag> tempHashtag = hashtagRepo.findByHashtagIgnoreCase(hashtag);
+        if(tempHashtag.isPresent()){
+            if(!tempHashtag.get().containsFoodTruck(theFoodTruck)){
+                tempHashtag.get().addFoodTruck(theFoodTruck);
+                hashtagRepo.save(tempHashtag.get());
+            }
+        }
 //        theFoodTruck.a
-        Hashtag theHashtag = new Hashtag(hashtag, theFoodTruck);
-        hashtagRepo.save(theHashtag);
+        else {
+            Hashtag theHashtag = new Hashtag(hashtag, theFoodTruck);
+            hashtagRepo.save(theHashtag);
 //        return "redirect:/SingleHashtagViewTemplate/" + myHashtagId; ""
+        }
         return "redirect:/AllHashtagTemplate";
     }
+
+
 }
