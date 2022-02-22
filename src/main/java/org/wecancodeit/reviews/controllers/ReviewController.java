@@ -25,10 +25,16 @@ public class ReviewController {
 //in order to finish this we need to make the form
     @PostMapping("/FoodTruckTemplate/{foodTruckId}")
     public String showSubmitReviewTemplate( @PathVariable long foodTruckId, @RequestParam String review, @RequestParam int starRating){
+
         FoodTruck theFoodTruck = foodTruckRepo.findById(foodTruckId).get();
-//        Review review = new Review()
+        float sum =0;
+        for(Review currentReview:theFoodTruck.getReviews()){
+            sum += currentReview.getStarRating();
+        }
+        theFoodTruck.setAverageRating(Math.round(sum/theFoodTruck.getReviews().size()));
         Review theReview = new Review(review, starRating, theFoodTruck);
         reviewRepo.save(theReview);
+
         return "redirect:/FoodTruckTemplate/" + foodTruckId;
     }
 }

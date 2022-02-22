@@ -19,6 +19,7 @@ public class FoodTruckController {
     }
     @RequestMapping("/FoodTruckTemplate/{foodTruckId}")
     public String showFoodTruckTemplate(Model model, @PathVariable long foodTruckId) {
+
         model.addAttribute("foodTruck", foodTruckRepo.findById(foodTruckId).get());
         return "FoodTruckTemplate";
     }

@@ -13,6 +13,8 @@ public class FoodTruck {
     private String website;
     private boolean orderAhead;
     private String truckImage;
+    private int averageRating;
+
 
     @OneToMany (mappedBy = "foodTruck")
     private Collection<Review> reviews;
@@ -28,6 +30,7 @@ public class FoodTruck {
         this.website = website;
         this.orderAhead = orderAhead;
         this.truckImage = truckImage;
+        this.averageRating = 3;
     }
 
     private FoodTruck(){
@@ -63,6 +66,14 @@ public class FoodTruck {
 
     public Collection<Hashtag> getHashtags() {
         return hashtags;
+    }
+
+    public int getAverageRating(){
+        return averageRating;
+    }
+
+    public void setAverageRating(int averageRating) {
+        this.averageRating = averageRating;
     }
 }
 

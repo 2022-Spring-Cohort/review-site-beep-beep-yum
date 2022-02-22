@@ -61,7 +61,8 @@ public class Populator implements CommandLineRunner {
         Hashtag hashtag4 = new Hashtag("#badseafoodbadbad", foodTruck1,foodTruck2);
         hashtagRepo.save(hashtag4);
 
-        Review review1 = new Review("this is awsome food", 4, foodTruck1);
+        Review review1 = new Review("Diane: Good food", 4, foodTruck1);
+
         reviewRepo.save(review1);
 
     }

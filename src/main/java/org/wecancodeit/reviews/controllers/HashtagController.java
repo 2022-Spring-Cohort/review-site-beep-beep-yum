@@ -61,7 +61,7 @@ public class HashtagController {
             hashtagRepo.save(theHashtag);
 //        return "redirect:/SingleHashtagViewTemplate/" + myHashtagId; ""
         }
-        return "redirect:/AllHashtagTemplate";
+        return "redirect:/AllHashtagsTemplate";
     }
 
 

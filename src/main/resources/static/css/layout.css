@@ -54,6 +54,17 @@ section>ul{
     max-height: 100px;
     text-align: center;
 }
+.reviewForm {
+    text-align: center;
+}
+.ActualReviews>ul>li {
+    display: flex;
+    flex-direction: column;
+    max-width: 200px 200px;
+    text-align: center;
+
+}
+
 
 
 

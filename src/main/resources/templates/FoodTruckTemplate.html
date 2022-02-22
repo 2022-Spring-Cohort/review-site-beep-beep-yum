@@ -31,45 +31,49 @@
                 <p th:text="${foodTruck.orderAhead}">Order ahead</p>
             </div>
             <ul>
-            <li th:each="hashtags: ${foodTruck.hashtags}" th:text="${hashtags.hashtag}"></li>
+                <li th:each="hashtags: ${foodTruck.hashtags}" th:text="${hashtags.hashtag}"></li>
             </ul>
-            <ul>
-                <li th:each="reviews: ${foodTruck.reviews}" th:text="${reviews.review}"></li>
-            </ul>
+            <h2>Average Rating <img th:src="'/img/star'+${foodTruck.averageRating}+'.png'"></h2>
         </div>
     </div>
-<!--    /SubmitHashtag/{hasgtagId}-->
+
+
+<!--    this is submit review-->
+    <div class="reviewForm">
+        <h3>Customer Reviews:</h3>
+        <div class="ActualReviews">
+            <ul>
+                <li th:each="review: ${foodTruck.reviews}"><img th:src="'/img/star'+${review.starRating}+'.png'"><p th:text="${review.review}"></p> </li>
+            </ul>
+        </div>
+
+
+        <form th:action="'/FoodTruckTemplate/'+${foodTruckId}" method="POST">
+            <label for="starRating">Star rating</label><br>
+            <input type="number" min="1" max="5" id="starRating" name="starRating" placeholder="4 star truck!"><br>
+            <br>
+            <label for="review">Enter Review</label><br>
+            <textarea id="review" name="review" rows="4" cols="50"></textarea>
+            <input name = "foodTruckId" type="hidden" th:value="${foodTruck.foodTruckId}">
+            <br>
+            <input type="submit" value="Submit">
+            <br>
+        </form>
+
+    </div>
+
+    <!--    /SubmitHashtag/{hasgtagId}-->
+
     <form th:action="|/SubmitHashtag|" method="POST">
         <div class="AddHashtag">
             <label >Add Hashtag: </label>
             <input name = "hashtag" type="text">
             <input name = "foodTruckId" type="hidden" th:value="${foodTruck.foodTruckId}">
         </div>
-    <div class="SubmitButton">
-        <button type="submit">Submit Hashtag</button>
-    </div>
+        <div class="SubmitButton">
+            <button type="submit">Submit Hashtag</button>
+        </div>
     </form>
-
-<!--    this is submit review-->
-    <div>
-        <h1>Submit Review</h1>
-
-
-
-            <form th:action="'/FoodTruckTemplate/'+${foodTruckId}" method="POST">
-                <label for="review">Enter Review</label><br>
-                <!--        <input type="text" id="review" name="review" placeholder="Great book ever"><br>-->
-                <textarea id="review" name="review" rows="4" cols="50"></textarea>
-                <br>
-                <label for="starRating">Star rating</label><br>
-                <input type="text" id="starRating" name="starRating" placeholder="4 star truck!"><br>
-                <input name = "foodTruckId" type="hidden" th:value="${foodTruck.foodTruckId}">
-
-                <input type="submit" value="Submit">
-            </form>
-
-
-    </div>
 
 </main>
 </body>
