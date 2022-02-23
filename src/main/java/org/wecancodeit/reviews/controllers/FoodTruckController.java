@@ -21,6 +21,7 @@ public class FoodTruckController {
     public String showFoodTruckTemplate(Model model, @PathVariable long foodTruckId) {
 
         model.addAttribute("foodTruck", foodTruckRepo.findById(foodTruckId).get());
+
         return "FoodTruckTemplate";
     }
     //in order to finish this we need to make the form

@@ -1,6 +1,10 @@
 *{
     box-sizing: border-box;
 }
+ body,html{
+    margin: 0px;
+    height: 100%;
+ }
 h1{
     text-align: center;
 
@@ -12,8 +16,15 @@ nav>ul{
     display:flex;
     justify-content: center;
     justify-content: space-evenly;
-    padding-bottom: 5em;
+    padding-top: 1em;
+    padding-bottom: 1em;
     list-style-type: none;
+
+}
+nav{
+    width: 100%;
+    margin: 0px;
+
 }
 
 .FoodTruckDetailsAndPhotos {
@@ -23,7 +34,17 @@ nav>ul{
     text-align: center;
     justify-content: center;
 }
-
+.FoodTruckList{
+    background-color: #fefefe;
+    display: flex;
+    margin: 0em 15% 0em 15%;
+    width: 70%;
+    justify-self: center;
+    height: 100%;
+}
+main{
+    height: 100%;
+}
 .ReviewInput {
     text-align: center;
 }
@@ -46,6 +67,9 @@ section>ul{
     flex-wrap: wrap;
     gap: 2em;
     list-style-type: none;
+    justify-content: space-around;
+    margin: 5px;
+    padding-inline-start: 0px
 }
 /* All hashtags */
 .HashtagList>ul {
@@ -64,6 +88,7 @@ section>ul{
     text-align: center;
 
 }
+
 
 
 

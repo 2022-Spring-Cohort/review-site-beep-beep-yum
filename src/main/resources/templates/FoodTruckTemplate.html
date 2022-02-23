@@ -17,16 +17,19 @@
 <main>
     <div class="FoodTruckDetailsAndPhotos">
         <div>
-            <img src="/img/american.jpg" alt="">
+            <img th:src="${foodTruck.truckImage}">
         </div>
         <div>
-            <h1 th:text="'This is ' + ${foodTruck.name} + ' food truck.'">this is a food truck.</h1>
+            <h1 th:text="${foodTruck.name} "></h1>
             <!--            <th:p>${foodTruck.getCategories}Category</th:p>-->
             <div>
-                <label>Website: </label>
-                <p th:text="${foodTruck.website}">Website</p>
+                <a th:href="${foodTruck.website}">WEBSITE</a>
+
+
             </div>
+
             <div>
+                <br>
                 <label>Order Ahead: </label>
                 <p th:text="${foodTruck.orderAhead}">Order ahead</p>
             </div>

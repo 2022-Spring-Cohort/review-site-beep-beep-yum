@@ -24,9 +24,9 @@ public class Populator implements CommandLineRunner {
     HashtagRepository hashtagRepo;
     @Override
     public void run(String... args) throws Exception {
-        FoodTruck foodTruck1 = new FoodTruck("Dos Hermanos", "https://doshermanoscolumbus.com/",true,"img");
+        FoodTruck foodTruck1 = new FoodTruck("Dos Hermanos", "https://doshermanoscolumbus.com/",true,"/img/dosHermanos.jpg");
         foodTruckRepo.save(foodTruck1);
-        FoodTruck foodTruck2 = new FoodTruck("Schmidt's","https://www.schmidthaus.com/sausage-truck/", false, "img2");
+        FoodTruck foodTruck2 = new FoodTruck("Schmidt's","https://www.schmidthaus.com/sausage-truck/", false, "/img/schmidts.jpg");
         foodTruckRepo.save(foodTruck2);
 
         Category category1 = new Category("Barbecue", "/img/barbecue.jpg", foodTruck1, foodTruck2);
@@ -35,7 +35,7 @@ public class Populator implements CommandLineRunner {
         categoryRepo.save(category2);
         Category category3 = new Category("Mexican", "/img/Mexican.jpg", foodTruck1, foodTruck2);
         categoryRepo.save(category3);
-        Category category4 = new Category("Mediterranean", "/img/Mediterranean.jpg", foodTruck1, foodTruck2);
+        Category category4 = new Category("Mediterranean", "/img/mediterranean.jpg", foodTruck1, foodTruck2);
         categoryRepo.save(category4);
         Category category5 = new Category("Sweet Treats", "/img/SweetTreats.jpg", foodTruck1, foodTruck2);
         categoryRepo.save(category5);

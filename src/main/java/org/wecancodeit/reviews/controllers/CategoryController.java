@@ -25,6 +25,7 @@ public class CategoryController {
     @RequestMapping("/CategoriesTemplate/SingleCategoryTruckListTemplate/{categoryId}")
     public String showSingleCategoryTruckListTemplate(Model model, @PathVariable long categoryId) {
         model.addAttribute("category", categoryRepo.findById(categoryId).get());
+        model.addAttribute("categoryName", categoryRepo.findById(categoryId).get().getCategory());
         return "SingleCategoryTruckListTemplate";
     }
 //    @RequestMapping("/Categories/singleCategoryTruckList/{categoryId}")
