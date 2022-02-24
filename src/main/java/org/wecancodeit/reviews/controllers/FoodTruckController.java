@@ -21,9 +21,16 @@ public class FoodTruckController {
     public String showFoodTruckTemplate(Model model, @PathVariable long foodTruckId) {
 
         model.addAttribute("foodTruck", foodTruckRepo.findById(foodTruckId).get());
-
+        String orderStr = "";
+        if (foodTruckRepo.findById(foodTruckId).get().isOrderAhead() == true) {
+            orderStr = "Available";
+        }else {
+            orderStr = "Not Available";
+        }
+        model.addAttribute("orderAhead", orderStr);
         return "FoodTruckTemplate";
     }
+
     //in order to finish this we need to make the form
 //    @RequestMapping("/SubmitReviewTemplate/{foodTruckId}")
 //    public String showSubmitReviewTemplate(Model model, @PathVariable long foodTruckId, @RequestParam String review, @RequestParam String rating){

@@ -25,12 +25,12 @@ public class FoodTruck {
     @ManyToMany (mappedBy = "foodTrucks")
     private Collection<Hashtag> hashtags;
 
-    public FoodTruck(String name, String website, boolean orderAhead, String truckImage) {
+    public FoodTruck(String name, String website, boolean orderAhead, String truckImage, int averageRating) {
         this.name = name;
         this.website = website;
         this.orderAhead = orderAhead;
         this.truckImage = truckImage;
-        this.averageRating = 3;
+        this.averageRating = averageRating;
     }
 
     private FoodTruck(){

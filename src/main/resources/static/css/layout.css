@@ -30,9 +30,15 @@ nav{
 .FoodTruckDetailsAndPhotos {
     /* food truck prototype */
     display: flex;
+    flex-direction: column;
     gap: 2em;
     text-align: center;
     justify-content: center;
+    background-color: #fefefe;
+    margin: 0em 15% 0em 15%;
+    width: 70%;
+    justify-self: center;
+    height: 100%;
 }
 .FoodTruckList{
     background-color: #fefefe;
@@ -56,7 +62,8 @@ main{
 
 .SubmitButton{
     text-align: center;
-    padding-top: 4em;
+    padding-top: 1em;
+    padding-bottom: 3em;
 }
 .foodTruckImgList{
     width: 200px;
@@ -75,8 +82,9 @@ section>ul{
 .HashtagList>ul {
     display: flex;
     flex-direction: column;
-    max-height: 100px;
     text-align: center;
+    text-direction: none;
+    list-style-type: none;
 }
 .reviewForm {
     text-align: center;
@@ -88,8 +96,31 @@ section>ul{
     text-align: center;
 
 }
+.AvgStarPhoto {
+    height: 1em;
+}
+.HashtagList>li{
+    list-style-type: none;
+}
 
+.ReviewBoxes {
+    display: flex;
+    justify-content: center;
+}
 
+.WebsiteButton {
+   text-decoration: none;
+   font-size: 1em;
+   padding: 5px;
+   border: 1px solid grey;
+   border-radius: 5px;
+   background-color: #bf5737;
+   color: white;
+}
+
+.WebsiteButton:visited{
+    color: white;
+}
 
 
 

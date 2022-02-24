@@ -5,6 +5,7 @@ body{
 nav{
     background-color: #ffffff;
     border-style: solid none;
+    border-color: grey;
 }
 nav ul li a:visited{
    color: #646464;
@@ -22,3 +23,32 @@ nav ul li a{
 main{
     font-size: x-large;
 }
+.HashtagList ul li a{
+    list-style-type: none;
+    color: #646464;
+    text-decoration: none;
+
+
+}
+.HashtagList ul li a:visited{
+    list-style-type: none;
+    text-decoration: none;
+}
+
+.HashtagList {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.starClass{
+    margin: auto;
+    height: auto;
+    width: 96px;
+
+
+}
+
+
+
+
+

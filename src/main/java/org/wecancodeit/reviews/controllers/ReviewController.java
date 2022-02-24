@@ -27,13 +27,15 @@ public class ReviewController {
     public String showSubmitReviewTemplate( @PathVariable long foodTruckId, @RequestParam String review, @RequestParam int starRating){
 
         FoodTruck theFoodTruck = foodTruckRepo.findById(foodTruckId).get();
-        float sum =0;
+        Review theReview = new Review(review, starRating, theFoodTruck);
+        reviewRepo.save(theReview);
+        float sum =5;
         for(Review currentReview:theFoodTruck.getReviews()){
             sum += currentReview.getStarRating();
         }
-        theFoodTruck.setAverageRating(Math.round(sum/theFoodTruck.getReviews().size()));
-        Review theReview = new Review(review, starRating, theFoodTruck);
-        reviewRepo.save(theReview);
+        theFoodTruck.setAverageRating(Math.round(sum/(theFoodTruck.getReviews().size()+1)));
+        foodTruckRepo.save(theFoodTruck);
+
 
         return "redirect:/FoodTruckTemplate/" + foodTruckId;
     }

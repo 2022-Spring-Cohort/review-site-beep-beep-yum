@@ -37,6 +37,7 @@ public class HashtagController {
     @RequestMapping("/SingleHashtagViewTemplate/{hashtagId}")
     public String showFoodTruckTemplate(Model model, @PathVariable long hashtagId) {
         model.addAttribute("hashtag", hashtagRepo.findById(hashtagId).get());
+        model.addAttribute("hashtagName", hashtagRepo.findById(hashtagId).get().getHashtag());
         return "SingleHashtagViewTemplate";
     }
 

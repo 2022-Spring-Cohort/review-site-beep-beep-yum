@@ -23,20 +23,19 @@
             <h1 th:text="${foodTruck.name} "></h1>
             <!--            <th:p>${foodTruck.getCategories}Category</th:p>-->
             <div>
-                <a th:href="${foodTruck.website}">WEBSITE</a>
+                <a class="WebsiteButton" th:href="${foodTruck.website}">WEBSITE</a>
 
 
             </div>
 
             <div>
                 <br>
-                <label>Order Ahead: </label>
-                <p th:text="${foodTruck.orderAhead}">Order ahead</p>
+                <label>Order Ahead: </label> <span th:text="${orderAhead}">Order ahead</span>
             </div>
-            <ul>
+            <ul class="HashtagList">
                 <li th:each="hashtags: ${foodTruck.hashtags}" th:text="${hashtags.hashtag}"></li>
             </ul>
-            <h2>Average Rating <img th:src="'/img/star'+${foodTruck.averageRating}+'.png'"></h2>
+            <h4>Average Rating <img th:src="'/img/star'+${foodTruck.averageRating}+'.png'"></h4>
         </div>
     </div>
 
@@ -46,23 +45,24 @@
         <h3>Customer Reviews:</h3>
         <div class="ActualReviews">
             <ul>
-                <li th:each="review: ${foodTruck.reviews}"><img th:src="'/img/star'+${review.starRating}+'.png'"><p th:text="${review.review}"></p> </li>
+                <li th:each="review: ${foodTruck.reviews}"><img class="starClass" th:src="'/img/star'+${review.starRating}+'.png'"><p th:text="${review.review}"></p> </li>
             </ul>
         </div>
-
+        <div class="ReviewBoxes">
 
         <form th:action="'/FoodTruckTemplate/'+${foodTruckId}" method="POST">
-            <label for="starRating">Star rating</label><br>
-            <input type="number" min="1" max="5" id="starRating" name="starRating" placeholder="4 star truck!"><br>
+            <label for="starRating">Star rating:</label><br>
+            <input type="number" min="1" max="5" id="starRating" name="starRating" value = "3" placeholder="4 star truck!">
             <br>
-            <label for="review">Enter Review</label><br>
-            <textarea id="review" name="review" rows="4" cols="50"></textarea>
+            <label for="review">Enter Review:</label><br>
+            <textarea id="review" name="review" rows="4" cols="50" maxlength="200"></textarea>
             <input name = "foodTruckId" type="hidden" th:value="${foodTruck.foodTruckId}">
             <br>
-            <input type="submit" value="Submit">
+            <input type="submit" value="Submit Review">
+            <br>
             <br>
         </form>
-
+    </div>
     </div>
 
     <!--    /SubmitHashtag/{hasgtagId}-->
