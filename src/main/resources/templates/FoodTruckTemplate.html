@@ -24,20 +24,17 @@
             <!--            <th:p>${foodTruck.getCategories}Category</th:p>-->
             <div>
                 <a class="WebsiteButton" th:href="${foodTruck.website}">WEBSITE</a>
-
-
             </div>
-
             <div>
                 <br>
                 <label>Order Ahead: </label> <span th:text="${orderAhead}">Order ahead</span>
             </div>
-            <ul class="HashtagList">
+            <ul class="HashtagListFoodTruckPage">
                 <li th:each="hashtags: ${foodTruck.hashtags}" th:text="${hashtags.hashtag}"></li>
             </ul>
             <h4>Average Rating <img th:src="'/img/star'+${foodTruck.averageRating}+'.png'"></h4>
         </div>
-    </div>
+
 
 
 <!--    this is submit review-->
@@ -79,6 +76,6 @@
     </form>
 
 </main>
-</body>
 
+</body>
 </html>

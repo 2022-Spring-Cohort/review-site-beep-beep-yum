@@ -1,21 +1,25 @@
 body{
     background-color: #75c1c6;
-
 }
 nav{
-    background-color: #ffffff;
+    background-color: #e7c346;
     border-style: solid none;
     border-color: grey;
 }
 nav ul li a:visited{
-   color: #646464;
+   color: white;
+}
+nav ul li a:hover {
+  color: grey;
+}
+nav ul li a{
+  text-shadow: 1px 1px grey;
 }
 nav ul li a{
    text-decoration: none;
    font-size: 2em;
    padding: 5px;
-   border: 1px solid grey;
-   border-radius: 5px;
+   color: white;
 }
 *{
     font-family:‘Raleway’, sans-serif;
@@ -34,18 +38,36 @@ main{
     list-style-type: none;
     text-decoration: none;
 }
+.HashtagList ul li a:hover{
+    list-style-type: none;
+    text-decoration: none;
+    color: black;
+}
 
 .HashtagList {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-self: center;
+    height: 100%;
 }
+
+.HashtagListFoodTruckPage{
+    list-style-type: none;
+    text-decoration: none;
+    color: #646464;
+}
+
 .starClass{
     margin: auto;
     height: auto;
     width: 96px;
+}
 
+footer {
 
+    padding: 1em 0;
+    background: #e7c346;
+    text-align: center;
 }
 
 
