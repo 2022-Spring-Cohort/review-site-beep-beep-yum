@@ -111,6 +111,8 @@ section>ul{
      width: 70%;
      margin: 0em 15% 0em 15%;
      justify-self: center;
+     border: 1px solid grey;
+     border-radius: 5px;
 }
 .ActualReviews>ul>li {
     display: flex;
