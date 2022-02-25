@@ -14,6 +14,9 @@ h2{
     text-align: center;
     color: #646464;
 }
+h3{
+    margin-top: 0;
+}
 .topBanner {
     background-color: #e7c346;
     width: 100%;
@@ -104,6 +107,10 @@ section>ul{
 }
 .reviewForm {
     text-align: center;
+     background-color: #fefefe;
+     width: 70%;
+     margin: 0em 15% 0em 15%;
+     justify-self: center;
 }
 .ActualReviews>ul>li {
     display: flex;
@@ -137,6 +144,12 @@ section>ul{
 
 .WebsiteButton:visited{
     color: white;
+}
+.HashtagForm {
+    background-color: #fefefe;
+    width: 70%;
+     margin: 0em 15% 0em 15%;
+     justify-self: center;
 }
 
 
