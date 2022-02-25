@@ -98,6 +98,35 @@ public class Populator implements CommandLineRunner {
         reviewRepo.save(review2);
         Review review3 = new Review("Tastes so good, make you wanna slap yo' mama!", 5, foodTruck11);
         reviewRepo.save(review3);
+        Review review4 = new Review("Awesome food, no wait!", 5, foodTruck3);
+        reviewRepo.save(review4);
+        Review review5 = new Review("One of my favorites in the city", 5, foodTruck4);
+        reviewRepo.save(review5);
+        Review review6 = new Review("Love this place!", 5, foodTruck5);
+        reviewRepo.save(review6);
+        Review review7 = new Review("I love this food truck because it has great locations and great food! The service is quick and friendly!", 5, foodTruck6);
+        reviewRepo.save(review7);
+        Review review8 = new Review("My daughter loves it here!", 5, foodTruck6);
+        reviewRepo.save(review8);
+        Review review9 = new Review("Amazing food!", 5, foodTruck7);
+        reviewRepo.save(review9);
+        Review review10 = new Review("The location is convenient, but the food is a bit pricey for what it is. Food is delicious though!", 5, foodTruck8);
+        reviewRepo.save(review10);
+        Review review11 = new Review("Food is great, but the truck is hard to find! I wish I could follow this truck around every day!", 5, foodTruck9);
+        reviewRepo.save(review11);
+        Review review12 = new Review("Worth the money!", 5, foodTruck10);
+        reviewRepo.save(review12);
+        Review review13 = new Review("This truck is outside of my work every day. So quick and easy to get lunch and has delicious food!", 5, foodTruck12);
+        reviewRepo.save(review13);
+        Review review14 = new Review("Love their desserts! This is a great treat!", 5, foodTruck13);
+        reviewRepo.save(review14);
+        Review review15 = new Review("Chefs kiss.  I love this food truck.", 5, foodTruck14);
+        reviewRepo.save(review15);
+
+
+
+
+
 
 
     }

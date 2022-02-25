@@ -15,14 +15,11 @@
     <h1 th:text="${hashtagName}">Hashtags</h1>
     
     
-    <section >
+    <section class = "singleHashtagPage" >
         <ul>
-<!--            <li th:each="currentFoodTruck: ${category.foodTrucks}"><a th:href="'/FoodTruckTemplate/' + ${currentFoodTruck.foodTruckId}"><img class="foodTruckImgList" th:src="'/img/hoodoo.jpg'"></a></li>-->
+
             <li th:each="currentFoodTruck: ${hashtag.foodTrucks}"><a th:href="'/FoodTruckTemplate/' + ${currentFoodTruck.foodTruckId}"><img class="foodTruckImgList" th:src="${currentFoodTruck.truckImage}"></a></li>
-<!--            <li><a href="./FoodTruckPrototype.html">Food Truck </a></li>-->
-<!--            <li><a href="./FoodTruckPrototype.html">Food Truck </a></li>-->
-<!--            <li><a href="./FoodTruckPrototype.html">Food Truck </a></li>-->
-<!--            <li><a href="./FoodTruckPrototype.html">Food Truck </a></li>-->
+
             
         </ul>
     </section>

@@ -22,7 +22,7 @@ public class ReviewController {
         this.foodTruckRepo = foodTruckRepo;
     }
 
-//in order to finish this we need to make the form
+
     @PostMapping("/FoodTruckTemplate/{foodTruckId}")
     public String showSubmitReviewTemplate( @PathVariable long foodTruckId, @RequestParam String review, @RequestParam int starRating){
 

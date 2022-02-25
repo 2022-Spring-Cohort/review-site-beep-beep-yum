@@ -21,7 +21,6 @@
         </div>
         <div>
             <h1 th:text="${foodTruck.name} "></h1>
-            <!--            <th:p>${foodTruck.getCategories}Category</th:p>-->
             <div>
                 <a class="WebsiteButton" th:href="${foodTruck.website}">WEBSITE</a>
             </div>
@@ -62,7 +61,6 @@
     </div>
     </div>
 
-    <!--    /SubmitHashtag/{hasgtagId}-->
 
     <form th:action="|/SubmitHashtag|" method="POST">
         <div class="AddHashtag">

@@ -14,7 +14,7 @@
 <main>
     <section class = "FoodTruckList">
         <ul>
-<!--            <li th:each="author: ${inBook.authors}"><a th:href="'/authors/' + ${author.id}" th:text="${author.name}">Sample author name</a></li>-->
+
             <li th:each="currentFoodTruck: ${category.foodTrucks}"><a th:href="'/FoodTruckTemplate/' + ${currentFoodTruck.foodTruckId}"><img class="foodTruckImgList" th:src="${currentFoodTruck.truckImage}"></a></li>
 
         </ul>

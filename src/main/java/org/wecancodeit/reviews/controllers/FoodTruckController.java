@@ -31,11 +31,4 @@ public class FoodTruckController {
         return "FoodTruckTemplate";
     }
 
-    //in order to finish this we need to make the form
-//    @RequestMapping("/SubmitReviewTemplate/{foodTruckId}")
-//    public String showSubmitReviewTemplate(Model model, @PathVariable long foodTruckId, @RequestParam String review, @RequestParam String rating){
-//        model.addAttribute("review", )
-//        return "SubmitReviewTemplate";
-//    }
-//    @RequestMapping("/")
 }

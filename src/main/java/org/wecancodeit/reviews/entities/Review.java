@@ -13,8 +13,7 @@ public class Review {
     private long reviewId;
     private String review;
     private int starRating;
-//    private String reviewTitle;
-//    private String reviewAuthor;
+
     @ManyToOne
     private FoodTruck foodTruck;
 
@@ -22,8 +21,7 @@ public class Review {
         this.review = review;
         this.starRating = starRating;
         this.foodTruck = foodTruck;
-//        this.reviewTitle = reviewTitle;
-//        this.reviewAuthor = reviewAuthor;
+
     }
 
     public Review() {
@@ -41,13 +39,7 @@ public class Review {
         return starRating;
     }
 
-//    public String getReviewTitle() {
-//        return reviewTitle;
-//    }
-//
-//    public String getReviewAuthor() {
-//        return reviewAuthor;
-//    }
+
 
     public FoodTruck getFoodTruck() {
         return foodTruck;

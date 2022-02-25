@@ -41,11 +41,7 @@ public class HashtagController {
         return "SingleHashtagViewTemplate";
     }
 
-    //    @RequestMapping("/CategoriesTemplate/SingleCategoryTruckListTemplate/{categoryId}")
-//    public String showSingleCategoryTruckListTemplate(Model model, @PathVariable long categoryId) {
-////        model.addAttribute("category", categoryRepo.findById(categoryId).get());
-//        return "SingleCategoryTruckListTemplate";
-//    }
+
     @PostMapping("/SubmitHashtag")
     public String addHashtag(@RequestParam String hashtag, @RequestParam Long foodTruckId) {
         FoodTruck theFoodTruck = foodTruckRepo.findById(foodTruckId).get();
@@ -60,7 +56,6 @@ public class HashtagController {
         else {
             Hashtag theHashtag = new Hashtag(hashtag, theFoodTruck);
             hashtagRepo.save(theHashtag);
-//        return "redirect:/SingleHashtagViewTemplate/" + myHashtagId; ""
         }
         return "redirect:/AllHashtagsTemplate";
     }

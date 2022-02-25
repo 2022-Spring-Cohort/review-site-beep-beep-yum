@@ -28,9 +28,5 @@ public class CategoryController {
         model.addAttribute("categoryName", categoryRepo.findById(categoryId).get().getCategory());
         return "SingleCategoryTruckListTemplate";
     }
-//    @RequestMapping("/Categories/singleCategoryTruckList/{categoryId}")
-//    public String showSingleCategoryTruckListTemplate(Model model, @PathVariable long categoryId){
-//        model.addAttribute("foodTruck",)
-//    }
 
 }
